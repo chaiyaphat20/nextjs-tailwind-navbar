@@ -6,21 +6,32 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\"",
+    "test-format": "npm run format && next lint",
+    "husky": "npx husky init",
+    "pre-commit": "npm run format && next lint && git add -A .",
+    "pre-commit2": "npm run format && next lint && npm run build && git add -A .",
+    "husky:mac": "chmod ug+x .husky/*",
+    "prepare": "husky"
   },
   "dependencies": {
+    "husky": "^9.0.11",
+    "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.3"
+    "react-icons": "^5.1.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
     "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }

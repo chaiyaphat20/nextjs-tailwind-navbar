@@ -55,7 +55,7 @@ export default function NavLink() {
                 </div>
                 {/* mobile menus */}
                 <div
-                  className={`${heading === link.name ? 'md:hidden' : 'hidden'} duration-200 ease-out`}
+                  className={`${heading === link.name ? 'md:hidden' : 'hidden'}`}
                 >
                   {link.subLinks.map((slink) => (
                     <div>

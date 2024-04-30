@@ -9,21 +9,23 @@ export default function NavLink() {
     <React.Fragment>
       {links.map((link) => (
         <div key={link.name}>
-          <div className="px-3 text-left md:cursor-pointer group ">
+          <div className="px-3 text-left cursor-pointer group ">
             <h1
-              className="py-7 flex justify-between items-center md:pr-0 pr-5 group"
+              className="py-7 flex justify-between cursor-pointer items-center md:pr-0 pr-5 group"
               onClick={() => {
                 heading !== link.name ? setHeading(link.name) : setHeading('')
                 setSubHeading('')
               }}
             >
               {link.name}
-              <span className="text-xl md:hidden inline">
-                {heading === link.name ? <IoChevronUp /> : <IoChevronDown />}
-              </span>
-              <span className="text-xl md:mt-1 md:ml-2  md:block hidden group-hover:rotate-180 group-hover:-mt-2">
-                {heading === link.name ? <IoChevronUp /> : <IoChevronDown />}
-              </span>
+              <div className={`${link.submenu ? '' : 'hidden'}`}>
+                <span className="text-xl md:hidden inline">
+                  {heading === link.name ? <IoChevronUp /> : <IoChevronDown />}
+                </span>
+                <span className="text-xl md:mt-1 md:ml-2  md:block hidden group-hover:rotate-180 group-hover:-mt-2">
+                  {heading === link.name ? <IoChevronUp /> : <IoChevronUp />}
+                </span>
+              </div>
             </h1>
             {link.subLinks && (
               <div>
@@ -53,7 +55,7 @@ export default function NavLink() {
                 </div>
                 {/* mobile menus */}
                 <div
-                  className={`${heading === link.name ? 'md:hidden' : 'hidden'}`}
+                  className={`${heading === link.name ? 'md:hidden' : 'hidden'} duration-200 ease-out`}
                 >
                   {link.subLinks.map((slink) => (
                     <div>

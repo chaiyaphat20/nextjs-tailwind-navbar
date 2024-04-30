@@ -3,7 +3,7 @@ import Navbar from './components/navbar'
 export default function Home() {
   return (
     <section
-      className="h-screen bg-slate-100 bg-cover
+      className="h-screen bg-slate-100 bg-cover bg-Hero
     font-[Poppins] md:bg-top bg-center"
     >
       <Navbar />

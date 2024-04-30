@@ -13,7 +13,8 @@
     "pre-commit": "npm run format && next lint && git add -A .",
     "pre-commit2": "npm run format && next lint && npm run build && git add -A .",
     "husky:mac": "chmod ug+x .husky/*",
-    "prepare": "husky"
+    "prepare": "husky",
+    "install-extension": "npx json5 .vscode/extensions.json |  npx json-cli-tool --path=recommendations --output=newline | xargs -L 1 code --install-extension"
   },
   "dependencies": {
     "husky": "^9.0.11",
